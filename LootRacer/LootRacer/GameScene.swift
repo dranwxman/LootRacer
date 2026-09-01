@@ -7,7 +7,7 @@ class GameScene: SKScene {
     private let maxSpeed: CGFloat = 300        // top speed, in points per second
     private let acceleration: CGFloat = 260    // how quickly the car speeds up
     private let coastFriction: CGFloat = 420   // how quickly it slows when you let go
-    private let turnRate: CGFloat = 3.2        // how sharply it turns at full speed
+    private let turnRate: CGFloat = 2.2        // how sharply it turns at full speed
 
     // MARK: - Car state
     private var car = SKNode()
