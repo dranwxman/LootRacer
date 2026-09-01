@@ -4,9 +4,9 @@ class GameScene: SKScene {
 
     // MARK: - Tuning knobs
     // These control how the car feels. Ask me to adjust any of them.
-    private let maxSpeed: CGFloat = 520        // top speed, in points per second
-    private let acceleration: CGFloat = 380    // how quickly the car speeds up
-    private let coastFriction: CGFloat = 260   // how quickly it slows when you let go
+    private let maxSpeed: CGFloat = 300        // top speed, in points per second
+    private let acceleration: CGFloat = 260    // how quickly the car speeds up
+    private let coastFriction: CGFloat = 420   // how quickly it slows when you let go
     private let turnRate: CGFloat = 3.2        // how sharply it turns at full speed
 
     // MARK: - Car state
@@ -134,7 +134,7 @@ class GameScene: SKScene {
         }
 
         // Steering only works when the car is actually moving
-        let speedFactor = min(carSpeed / 200, 1)
+        let speedFactor = min(carSpeed / 120, 1)
         heading += steerInput * turnRate * speedFactor * dt
 
         // Move the car along its heading and rotate the sprite to match
@@ -144,7 +144,7 @@ class GameScene: SKScene {
 
         wrapAroundEdges()
 
-        speedLabel.text = "\(Int(carSpeed / 5)) mph"
+        speedLabel.text = "\(Int(carSpeed / 3)) mph"
     }
 
     /// Until we have a track, let the car loop around the screen edges
